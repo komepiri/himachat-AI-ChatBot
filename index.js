@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyC_kryU1h_p1USlSZsooRaD-g5V6xqxCKQ';  // Google APIキーをここに設定
+const apiKey = 'Your-Gemini-API-Keys';  // Google APIキーをここに設定
 let hasPosted = false;  // POSTが行われたかどうかを記録するフラグ
 
 // 2秒ごとに実行する関数
@@ -9,7 +9,7 @@ function fetchAndProcessMozi() {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: `marumie=${myid}&mysession=${mysession}&roomid=6190&bmark=29316675`
+        body: `marumie=${myid}&mysession=${mysession}&roomid=<roomid>&bmark=29316675`
     })
     .then(response => response.text())
     .then(text => {
@@ -82,7 +82,7 @@ function fetchAndProcessMozi() {
                                 headers: {
                                     'Content-Type': 'application/x-www-form-urlencoded'
                                 },
-                                body: `marumie=${myid}&mysession=${mysession}&roomid=6190&waruguti=${encodeURIComponent(generatedText)}`
+                                body: `marumie=${myid}&mysession=${mysession}&roomid=<roomid>&waruguti=${encodeURIComponent(generatedText)}`
                             })
                             .then(response => response.text())
                             .then(result => {
